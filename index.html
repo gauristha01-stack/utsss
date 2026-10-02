@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,10 +31,6 @@ button {
     cursor: pointer;
 }
 
-/* =========================
-   GENERAL
-========================= */
-
 .page {
     min-height: 100vh;
     display: none;
@@ -62,7 +59,7 @@ button {
 }
 
 /* =========================
-   PAGE 1 - ENVELOPE
+   PAGE 1 — ENVELOPE
 ========================= */
 
 #page1 {
@@ -87,6 +84,7 @@ button {
     cursor: pointer;
     filter: drop-shadow(0 18px 18px rgba(75,48,48,.15));
     transition: .3s;
+    perspective: 700px;
 }
 
 .envelope:hover {
@@ -168,7 +166,9 @@ button {
     margin-top: 10px;
 }
 
-/* Ghost */
+/* =========================
+   GHOST + LOVE
+========================= */
 
 .ghost {
     font-size: 65px;
@@ -177,8 +177,13 @@ button {
 }
 
 @keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
 }
 
 .boyfriend-day {
@@ -194,12 +199,17 @@ button {
 }
 
 @keyframes heartbeat {
-    0%,100% { transform: scale(1); }
-    50% { transform: scale(1.15); }
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
 }
 
 /* =========================
-   HEARTS
+   FLOATING HEARTS
 ========================= */
 
 .heart {
@@ -210,11 +220,16 @@ button {
 }
 
 @keyframes heartFloat {
+
     from {
         transform: translateY(110vh) rotate(0deg);
         opacity: 0;
     }
-    20% { opacity: .8; }
+
+    20% {
+        opacity: .8;
+    }
+
     100% {
         transform: translateY(-15vh) rotate(360deg);
         opacity: 0;
@@ -222,7 +237,7 @@ button {
 }
 
 /* =========================
-   PAGE 2 - ANNIVERSARY
+   PAGE 2 — ANNIVERSARY
 ========================= */
 
 #page2 {
@@ -264,7 +279,7 @@ button {
 }
 
 /* =========================
-   PAGE 3 - AUTUMN
+   PAGE 3 — OCTOBER
 ========================= */
 
 #page3 {
@@ -307,9 +322,11 @@ button {
 }
 
 @keyframes fall {
+
     0% {
         transform: translateY(-10vh) rotate(0deg);
     }
+
     100% {
         transform: translateY(115vh) rotate(720deg);
     }
@@ -322,7 +339,7 @@ button {
 }
 
 /* =========================
-   PAGE 4 - FALL IN LOVE
+   PAGE 4 — FALL IN LOVE
 ========================= */
 
 #page4 {
@@ -365,7 +382,7 @@ button {
 }
 
 /* =========================
-   PAGE 5 - AWARDS
+   PAGE 5 — AWARDS
 ========================= */
 
 #page5 {
@@ -423,7 +440,7 @@ button {
 }
 
 /* =========================
-   PAGE 6 - FIVE THINGS
+   PAGE 6 — FIVE THINGS
 ========================= */
 
 #page6 {
@@ -478,7 +495,7 @@ button {
 }
 
 /* =========================
-   PAGE 7 - QUESTION
+   PAGE 7 — QUESTION
 ========================= */
 
 #page7 {
@@ -534,7 +551,7 @@ button {
 }
 
 /* =========================
-   PAGE 8 - QUIET
+   PAGE 8 — QUIET MOMENT
 ========================= */
 
 #page8 {
@@ -565,7 +582,7 @@ button {
 }
 
 /* =========================
-   PAGE 9 - LETTER
+   PAGE 9 — LETTER
 ========================= */
 
 #page9 {
@@ -615,10 +632,91 @@ button {
 }
 
 /* =========================
-   PAGE 10 - FINAL
+   PAGE 10 — WILL YOU KEEP
+   CHOOSING ME?
 ========================= */
 
 #page10 {
+    background:
+        radial-gradient(circle at center, rgba(255,225,190,.18), transparent 35%),
+        linear-gradient(145deg, #3b2929, #21191c);
+    color: #fff7ee;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.choice-final-content {
+    z-index: 5;
+    padding: 30px;
+    max-width: 750px;
+}
+
+.tiny-heart {
+    font-size: 70px;
+    color: #e9a5a5;
+    animation: heartbeat 1.5s infinite;
+    margin-bottom: 20px;
+}
+
+.choice-final-title {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(55px, 9vw, 95px);
+    line-height: 1;
+    color: #fff1e5;
+}
+
+.choice-final-sub {
+    margin-top: 30px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #e5cfc4;
+}
+
+.pumpkin-btn {
+    margin-top: 35px;
+    border: 1px solid #dca77c;
+    background: rgba(220,167,124,.12);
+    color: #ffe0bd;
+    padding: 15px 25px;
+    border-radius: 35px;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.pumpkin-btn:hover {
+    background: #dca77c;
+    color: #352322;
+    transform: translateY(-4px);
+}
+
+#pumpkin-answer {
+    display: none;
+    margin-top: 30px;
+    font-family: 'Caveat', cursive;
+    font-size: 38px;
+    color: #ffd19d;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   PAGE 11 — FINAL
+========================= */
+
+#page11 {
     background:
         radial-gradient(circle at center, #fff0dc, transparent 30%),
         linear-gradient(135deg, #f2c5b2, #fff0dc, #d99479);
@@ -665,6 +763,7 @@ button {
 }
 
 @keyframes confettiFall {
+
     to {
         transform: translateY(110vh) rotate(700deg);
         opacity: 0;
@@ -698,6 +797,7 @@ button {
     .letter {
         font-size: 21px;
     }
+
 }
 </style>
 </head>
@@ -705,14 +805,18 @@ button {
 <body>
 
 <!-- =========================
-     PAGE 1
+     PAGE 1 — ENVELOPE
 ========================= -->
 
 <section class="page active" id="page1">
 
     <div class="envelope-area">
 
-        <div class="envelope" id="envelope" onclick="openEnvelope()">
+        <div
+            class="envelope"
+            id="envelope"
+            onclick="openEnvelope()"
+        >
 
             <div class="envelope-back"></div>
 
@@ -724,7 +828,9 @@ button {
 
             <div class="envelope-front"></div>
 
-            <div class="envelope-heart">❤️</div>
+            <div class="envelope-heart">
+                ❤️
+            </div>
 
         </div>
 
@@ -742,14 +848,16 @@ button {
 
 
 <!-- =========================
-     PAGE 2
+     PAGE 2 — BOYFRIEND'S DAY
 ========================= -->
 
 <section class="page" id="page2">
 
     <div class="anniversary-content">
 
-        <div class="ghost">👻</div>
+        <div class="ghost">
+            👻
+        </div>
 
         <div class="small-text">
             a little message for you
@@ -763,13 +871,19 @@ button {
             ❤️
         </div>
 
-        <div style="font-family:'Caveat'; font-size:25px;">
+        <div style="
+            font-family:'Caveat';
+            font-size:25px;
+        ">
             I love youuuuu.
         </div>
 
         <br>
 
-        <button class="next-btn" onclick="nextPage()">
+        <button
+            class="next-btn"
+            onclick="nextPage()"
+        >
             one more thing... →
         </button>
 
@@ -781,7 +895,7 @@ button {
 
 
 <!-- =========================
-     PAGE 3
+     PAGE 3 — OCTOBER
 ========================= -->
 
 <section class="page" id="page3">
@@ -800,7 +914,10 @@ button {
             simply because it became ours.
         </p>
 
-        <button class="next-btn" onclick="nextPage()">
+        <button
+            class="next-btn"
+            onclick="nextPage()"
+        >
             🍂 but why October?
         </button>
 
@@ -810,7 +927,7 @@ button {
 
 
 <!-- =========================
-     PAGE 4
+     PAGE 4 — FALL IN LOVE
 ========================= -->
 
 <section class="page" id="page4">
@@ -833,7 +950,10 @@ button {
             And somehow, I'd choose you all over again.
         </div>
 
-        <button class="next-btn" onclick="nextPage()">
+        <button
+            class="next-btn"
+            onclick="nextPage()"
+        >
             keep going 🍂
         </button>
 
@@ -843,14 +963,16 @@ button {
 
 
 <!-- =========================
-     PAGE 5
+     PAGE 5 — BOYFRIEND AWARDS
 ========================= -->
 
 <section class="page" id="page5">
 
     <div class="award-content">
 
-        <div class="trophy">🏆</div>
+        <div class="trophy">
+            🏆
+        </div>
 
         <div class="award-heading">
             The Official Boyfriend Awards
@@ -858,7 +980,10 @@ button {
 
         <div class="award-box">
 
-            <div style="font-size:14px; letter-spacing:2px;">
+            <div style="
+                font-size:14px;
+                letter-spacing:2px;
+            ">
                 AND THE AWARD FOR
             </div>
 
@@ -870,21 +995,32 @@ button {
                 goes to...
             </div>
 
-            <div style="font-size:50px; margin:10px;">
+            <div style="
+                font-size:50px;
+                margin:10px;
+            ">
                 🥁
             </div>
 
-            <div style="font-family:'Caveat'; font-size:40px;">
+            <div style="
+                font-family:'Caveat';
+                font-size:40px;
+            ">
                 You. ❤️
             </div>
 
             <ul class="award-list">
 
                 <li>🏆 Best Person to Annoy Me</li>
+
                 <li>🏆 Best Human to Hug</li>
+
                 <li>🏆 Best "I'm Here" Person</li>
+
                 <li>🏆 Best Partner in Random Nonsense</li>
+
                 <li>🏆 Best Boyfriend</li>
+
                 <li>🏆 Best Place to Feel at Home</li>
 
             </ul>
@@ -896,7 +1032,10 @@ button {
 
         </div>
 
-        <button class="next-btn" onclick="nextPage()">
+        <button
+            class="next-btn"
+            onclick="nextPage()"
+        >
             continue →
         </button>
 
@@ -906,7 +1045,7 @@ button {
 
 
 <!-- =========================
-     PAGE 6
+     PAGE 6 — FIVE THINGS
 ========================= -->
 
 <section class="page" id="page6">
@@ -925,37 +1064,85 @@ button {
         <div class="reason-grid">
 
             <div class="reason">
-                <div class="reason-number">01</div>
-                <p>You are loved. More than you probably realize.</p>
+
+                <div class="reason-number">
+                    01
+                </div>
+
+                <p>
+                    You are loved.
+                    More than you probably realize.
+                </p>
+
             </div>
 
             <div class="reason">
-                <div class="reason-number">02</div>
-                <p>You make ordinary days feel a little better.</p>
+
+                <div class="reason-number">
+                    02
+                </div>
+
+                <p>
+                    You make ordinary days
+                    feel a little better.
+                </p>
+
             </div>
 
             <div class="reason">
-                <div class="reason-number">03</div>
-                <p>You are still my favourite human.</p>
+
+                <div class="reason-number">
+                    03
+                </div>
+
+                <p>
+                    You are still
+                    my favourite human.
+                </p>
+
             </div>
 
             <div class="reason">
-                <div class="reason-number">04</div>
-                <p>I hope we keep growing together.</p>
+
+                <div class="reason-number">
+                    04
+                </div>
+
+                <p>
+                    I hope we keep
+                    growing together.
+                </p>
+
             </div>
 
             <div class="reason">
-                <div class="reason-number">05</div>
-                <p>If I had to choose again, I'd still choose you.</p>
+
+                <div class="reason-number">
+                    05
+                </div>
+
+                <p>
+                    If I had to choose again,
+                    I'd still choose you.
+                </p>
+
             </div>
 
         </div>
 
-        <div style="font-family:'Caveat'; font-size:27px; margin-bottom:25px;">
-            And that's only five. I could keep going. ❤️
+        <div style="
+            font-family:'Caveat';
+            font-size:27px;
+            margin-bottom:25px;
+        ">
+            And that's only five.
+            I could keep going. ❤️
         </div>
 
-        <button class="next-btn" onclick="nextPage()">
+        <button
+            class="next-btn"
+            onclick="nextPage()"
+        >
             one tiny question →
         </button>
 
@@ -965,7 +1152,7 @@ button {
 
 
 <!-- =========================
-     PAGE 7
+     PAGE 7 — QUESTION
 ========================= -->
 
 <section class="page" id="page7">
@@ -982,25 +1169,40 @@ button {
 
         <div class="choice-container">
 
-            <button class="choice" onclick="answer()">
+            <button
+                class="choice"
+                onclick="answer()"
+            >
                 ☕ cozy
             </button>
 
-            <button class="choice" onclick="answer()">
+            <button
+                class="choice"
+                onclick="answer()"
+            >
                 🍂 autumn
             </button>
 
-            <button class="choice" onclick="answer()">
+            <button
+                class="choice"
+                onclick="answer()"
+            >
                 ❤️ hopelessly in love
             </button>
 
-            <button class="choice" onclick="answer()">
+            <button
+                class="choice"
+                onclick="answer()"
+            >
                 🧸 two idiots
             </button>
 
         </div>
 
-        <div class="answer" id="answer"></div>
+        <div
+            class="answer"
+            id="answer"
+        ></div>
 
         <button
             class="next-btn"
@@ -1017,20 +1219,24 @@ button {
 
 
 <!-- =========================
-     PAGE 8
+     PAGE 8 — QUIET MOMENT
 ========================= -->
 
 <section class="page" id="page8">
 
     <div class="question-content">
 
-        <div class="moon">🌙</div>
+        <div class="moon">
+            🌙
+        </div>
 
         <div class="quiet-text">
+
             Some things change.<br>
             Seasons change.<br>
             Years change.<br>
             We change.
+
         </div>
 
         <div class="quiet-small">
@@ -1048,7 +1254,10 @@ button {
 
         <br>
 
-        <button class="next-btn" onclick="nextPage()">
+        <button
+            class="next-btn"
+            onclick="nextPage()"
+        >
             something I want you to read 💌
         </button>
 
@@ -1058,7 +1267,7 @@ button {
 
 
 <!-- =========================
-     PAGE 9 - LETTER
+     PAGE 9 — LETTER
 ========================= -->
 
 <section class="page" id="page9">
@@ -1071,7 +1280,9 @@ button {
 
         <div class="letter">
 
-            <p>Dear Utsav,</p>
+            <p>
+                Dear Utsav,
+            </p>
 
             <p>
                 If I could go back to the beginning of our story,
@@ -1122,10 +1333,16 @@ button {
 
         </div>
 
-        <div style="text-align:center; margin-top:30px;">
+        <div style="
+            text-align:center;
+            margin-top:30px;
+        ">
 
-            <button class="next-btn" onclick="nextPage()">
-                🎈 one last surprise
+            <button
+                class="next-btn"
+                onclick="nextPage()"
+            >
+                🎈 one last question
             </button>
 
         </div>
@@ -1136,10 +1353,48 @@ button {
 
 
 <!-- =========================
-     PAGE 10
+     PAGE 10 — CHOOSE ME
 ========================= -->
 
 <section class="page" id="page10">
+
+    <div class="choice-final-content">
+
+        <div class="tiny-heart">
+            ♡
+        </div>
+
+        <div class="choice-final-title">
+            Will you keep choosing me?
+        </div>
+
+        <div class="choice-final-sub">
+
+            through all the ordinary days,<br>
+            all the silly ones,<br>
+            and all the Octobers still to come?
+
+        </div>
+
+        <button
+            class="pumpkin-btn"
+            onclick="chooseMe()"
+        >
+            yes, of course, pumpkin 🎃❤️
+        </button>
+
+        <div id="pumpkin-answer"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 11 — FINAL CELEBRATION
+========================= -->
+
+<section class="page" id="page11">
 
     <div id="confetti"></div>
 
@@ -1176,34 +1431,42 @@ let currentPage = 1;
 
 function nextPage() {
 
-    const oldPage = document.getElementById("page" + currentPage);
+    const oldPage =
+        document.getElementById("page" + currentPage);
 
     oldPage.classList.remove("active");
 
     currentPage++;
 
-    const newPage = document.getElementById("page" + currentPage);
+    const newPage =
+        document.getElementById("page" + currentPage);
 
     if (newPage) {
+
         newPage.classList.add("active");
+
         window.scrollTo(0, 0);
+
     }
 
     if (currentPage === 2) {
+
         createHearts();
+
     }
 
     if (currentPage === 3) {
+
         createLeaves("leaves1", 25);
+
     }
 
     if (currentPage === 4) {
+
         createLeaves("leaves2", 25);
+
     }
 
-    if (currentPage === 10) {
-        createConfetti();
-    }
 }
 
 
@@ -1213,23 +1476,27 @@ function nextPage() {
 
 function openEnvelope() {
 
-    const envelope = document.getElementById("envelope");
+    const envelope =
+        document.getElementById("envelope");
 
     envelope.classList.add("open");
 
     setTimeout(() => {
 
-        document.getElementById("page1")
+        document
+            .getElementById("page1")
             .classList.remove("active");
 
         currentPage = 2;
 
-        document.getElementById("page2")
+        document
+            .getElementById("page2")
             .classList.add("active");
 
         createHearts();
 
     }, 1500);
+
 }
 
 
@@ -1239,21 +1506,36 @@ function openEnvelope() {
 
 function createHearts() {
 
-    const container = document.getElementById("hearts1");
+    const container =
+        document.getElementById("hearts1");
 
-    if (!container || container.children.length > 0)
+    if (!container ||
+        container.children.length > 0) {
+
         return;
 
-    const hearts = ["❤️", "♡", "♥", "💕"];
+    }
+
+    const hearts = [
+        "❤️",
+        "♡",
+        "♥",
+        "💕"
+    ];
 
     for (let i = 0; i < 35; i++) {
 
-        const heart = document.createElement("div");
+        const heart =
+            document.createElement("div");
 
         heart.className = "heart";
 
         heart.innerText =
-            hearts[Math.floor(Math.random() * hearts.length)];
+            hearts[
+                Math.floor(
+                    Math.random() * hearts.length
+                )
+            ];
 
         heart.style.left =
             Math.random() * 100 + "%";
@@ -1268,7 +1550,9 @@ function createHearts() {
             (12 + Math.random() * 18) + "px";
 
         container.appendChild(heart);
+
     }
+
 }
 
 
@@ -1276,24 +1560,41 @@ function createHearts() {
    AUTUMN LEAVES
 ========================= */
 
-function createLeaves(containerId, amount) {
+function createLeaves(
+    containerId,
+    amount
+) {
 
     const container =
         document.getElementById(containerId);
 
-    if (!container || container.children.length > 0)
+    if (!container ||
+        container.children.length > 0) {
+
         return;
 
-    const leaves = ["🍁", "🍂", "🍁", "🍂"];
+    }
+
+    const leaves = [
+        "🍁",
+        "🍂",
+        "🍁",
+        "🍂"
+    ];
 
     for (let i = 0; i < amount; i++) {
 
-        const leaf = document.createElement("div");
+        const leaf =
+            document.createElement("div");
 
         leaf.className = "leaf";
 
         leaf.innerText =
-            leaves[Math.floor(Math.random() * leaves.length)];
+            leaves[
+                Math.floor(
+                    Math.random() * leaves.length
+                )
+            ];
 
         leaf.style.left =
             Math.random() * 100 + "%";
@@ -1308,7 +1609,9 @@ function createLeaves(containerId, amount) {
             (20 + Math.random() * 25) + "px";
 
         container.appendChild(leaf);
+
     }
+
 }
 
 
@@ -1324,8 +1627,44 @@ function answer() {
     answerBox.innerHTML =
         "Correct answer. ❤️";
 
-    document.getElementById("questionNext")
+    document
+        .getElementById("questionNext")
         .style.display = "inline-block";
+
+}
+
+
+/* =========================
+   WILL YOU KEEP CHOOSING ME?
+========================= */
+
+function chooseMe() {
+
+    const answer =
+        document.getElementById("pumpkin-answer");
+
+    answer.innerHTML =
+        "I knew it. 🎃❤️";
+
+    answer.style.display =
+        "block";
+
+    setTimeout(() => {
+
+        document
+            .getElementById("page10")
+            .classList.remove("active");
+
+        currentPage = 11;
+
+        document
+            .getElementById("page11")
+            .classList.add("active");
+
+        createConfetti();
+
+    }, 2200);
+
 }
 
 
@@ -1339,8 +1678,14 @@ function createConfetti() {
         document.getElementById("confetti");
 
     const pieces = [
-        "❤️", "💕", "🎈", "🍂",
-        "🍁", "✨", "♥", "🎉"
+        "❤️",
+        "💕",
+        "🎈",
+        "🍂",
+        "🍁",
+        "✨",
+        "♥",
+        "🎉"
     ];
 
     for (let i = 0; i < 70; i++) {
@@ -1348,10 +1693,15 @@ function createConfetti() {
         const piece =
             document.createElement("div");
 
-        piece.className = "confetti";
+        piece.className =
+            "confetti";
 
         piece.innerText =
-            pieces[Math.floor(Math.random() * pieces.length)];
+            pieces[
+                Math.floor(
+                    Math.random() * pieces.length
+                )
+            ];
 
         piece.style.left =
             Math.random() * 100 + "%";
@@ -1366,10 +1716,13 @@ function createConfetti() {
             (12 + Math.random() * 22) + "px";
 
         container.appendChild(piece);
+
     }
+
 }
 
 </script>
 
 </body>
 </html>
+```
