@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Favourite Human ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #fff8f1;
+    color: #4b3030;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.page {
+    min-height: 100vh;
+    display: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.page.active {
+    display: flex;
+}
+
+.next-btn {
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    background: #8f3f3f;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(100, 45, 45, .18);
+    transition: .25s;
+}
+
+.next-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* =========================
+   PAGE 1 - ENVELOPE
+========================= */
+
+#page1 {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.9), transparent 25%),
+        linear-gradient(135deg, #fff6ee, #f7ded0);
+    align-items: center;
+    justify-content: center;
+}
+
+.envelope-area {
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.envelope {
+    width: 280px;
+    height: 190px;
+    position: relative;
+    margin: 0 auto 30px;
+    cursor: pointer;
+    filter: drop-shadow(0 18px 18px rgba(75,48,48,.15));
+    transition: .3s;
+}
+
+.envelope:hover {
+    transform: translateY(-6px);
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #b85f5f;
+    border-radius: 8px;
+}
+
+.envelope-front {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70%;
+    background: #c96e6e;
+    clip-path: polygon(0 0, 50% 62%, 100% 0, 100% 100%, 0 100%);
+    border-radius: 0 0 8px 8px;
+    z-index: 3;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 65%;
+    background: #d87c7c;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    transform-origin: top;
+    transition: 1s;
+    z-index: 4;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.letter-paper {
+    position: absolute;
+    width: 82%;
+    height: 145px;
+    left: 9%;
+    top: 18px;
+    background: #fffdf9;
+    border-radius: 5px;
+    z-index: 2;
+    transition: 1s;
+    padding: 25px 10px;
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+}
+
+.envelope.open .letter-paper {
+    transform: translateY(-105px);
+}
+
+.envelope-heart {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
+
+.envelope-title {
+    font-family: 'Caveat', cursive;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.open-hint {
+    color: #815252;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Ghost */
+
+.ghost {
+    font-size: 65px;
+    animation: float 3s ease-in-out infinite;
+    margin-bottom: 12px;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.boyfriend-day {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(38px, 7vw, 70px);
+    color: #873c3c;
+}
+
+.love-gif {
+    font-size: 70px;
+    margin: 15px 0;
+    animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+/* =========================
+   HEARTS
+========================= */
+
+.heart {
+    position: absolute;
+    color: #c65f6b;
+    animation: heartFloat linear infinite;
+    pointer-events: none;
+}
+
+@keyframes heartFloat {
+    from {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: .8; }
+    100% {
+        transform: translateY(-15vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   PAGE 2 - ANNIVERSARY
+========================= */
+
+#page2 {
+    background: linear-gradient(180deg, #fff7f3, #ffe9e5);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.anniversary-content {
+    z-index: 2;
+    padding: 30px;
+}
+
+.small-text {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #9c6666;
+    margin-bottom: 15px;
+}
+
+.big-heart {
+    font-size: 90px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.anniversary-title {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(55px, 10vw, 105px);
+    color: #873c3c;
+    line-height: .95;
+}
+
+.five-years {
+    font-family: 'Caveat', cursive;
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+/* =========================
+   PAGE 3 - AUTUMN
+========================= */
+
+#page3 {
+    background:
+        radial-gradient(circle at 50% 30%, rgba(255,221,170,.5), transparent 35%),
+        linear-gradient(160deg, #4c2e25, #8a4c32 55%, #3a2824);
+    color: #fff8e9;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.autumn-content {
+    z-index: 5;
+    max-width: 800px;
+    padding: 30px;
+}
+
+.autumn-title {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(55px, 9vw, 100px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.autumn-sub {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: auto;
+    color: #ffe9c8;
+}
+
+.leaf {
+    position: absolute;
+    font-size: 35px;
+    animation: fall linear infinite;
+    top: -70px;
+    z-index: 1;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(115vh) rotate(720deg);
+    }
+}
+
+#page3 .next-btn {
+    background: #e7a24b;
+    color: #3d281f;
+    margin-top: 30px;
+}
+
+/* =========================
+   PAGE 4 - FALL IN LOVE
+========================= */
+
+#page4 {
+    background:
+        radial-gradient(circle at center, #f3c18c, transparent 25%),
+        linear-gradient(150deg, #70402e, #321e1b);
+    color: #fff5e6;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.fall-content {
+    z-index: 5;
+    padding: 30px;
+}
+
+.fall-title {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(55px, 10vw, 105px);
+    line-height: .95;
+}
+
+.fall-sub {
+    font-size: 18px;
+    margin-top: 25px;
+    opacity: .9;
+}
+
+.falling-heart {
+    font-size: 55px;
+    margin: 25px;
+    animation: heartbeat 1.5s infinite;
+}
+
+#page4 .next-btn {
+    background: #f0bd78;
+    color: #442b22;
+    margin-top: 20px;
+}
+
+/* =========================
+   PAGE 5 - AWARDS
+========================= */
+
+#page5 {
+    background: #fff8f0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.award-content {
+    width: min(850px, 90%);
+    padding: 30px;
+}
+
+.trophy {
+    font-size: 75px;
+    animation: float 3s infinite;
+}
+
+.award-heading {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(45px, 8vw, 80px);
+    color: #8a4b38;
+}
+
+.award-box {
+    margin: 25px auto;
+    padding: 30px;
+    background: #fff;
+    border: 2px solid #e6c29c;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(100,50,30,.08);
+}
+
+.award-name {
+    font-family: 'Caveat', cursive;
+    font-size: 50px;
+    color: #a55345;
+}
+
+.award-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.award-list li {
+    padding: 8px;
+    font-size: 16px;
+}
+
+.award-footer {
+    font-family: 'Caveat', cursive;
+    font-size: 27px;
+    margin-top: 20px;
+}
+
+/* =========================
+   PAGE 6 - FIVE THINGS
+========================= */
+
+#page6 {
+    background: linear-gradient(135deg, #fff5ef, #f9e1d9);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.five-content {
+    width: min(850px, 90%);
+    padding: 30px;
+}
+
+.five-title {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(48px, 8vw, 75px);
+    color: #873c3c;
+}
+
+.reason-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.reason {
+    background: rgba(255,255,255,.75);
+    padding: 22px 12px;
+    border-radius: 18px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: .3s;
+}
+
+.reason:hover {
+    transform: translateY(-8px);
+}
+
+.reason-number {
+    font-family: 'Caveat', cursive;
+    font-size: 35px;
+    color: #b15a55;
+}
+
+.reason p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =========================
+   PAGE 7 - QUESTION
+========================= */
+
+#page7 {
+    background: #392725;
+    color: #fff5e9;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.question-content {
+    padding: 30px;
+    max-width: 750px;
+}
+
+.question-title {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(50px, 9vw, 85px);
+}
+
+.question {
+    margin: 30px 0;
+    font-size: 20px;
+}
+
+.choice-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.choice {
+    border: 1px solid #cda58b;
+    background: transparent;
+    color: #fff5e9;
+    padding: 13px 20px;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.choice:hover {
+    background: #cda58b;
+    color: #392725;
+}
+
+.answer {
+    min-height: 45px;
+    margin: 25px;
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    color: #ffd09c;
+}
+
+/* =========================
+   PAGE 8 - QUIET
+========================= */
+
+#page8 {
+    background:
+        radial-gradient(circle at 70% 25%, rgba(255,230,170,.18), transparent 10%),
+        linear-gradient(180deg, #171b29, #292338);
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.moon {
+    font-size: 70px;
+    margin-bottom: 25px;
+}
+
+.quiet-text {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(40px, 7vw, 70px);
+    line-height: 1.15;
+}
+
+.quiet-small {
+    margin-top: 25px;
+    opacity: .7;
+    font-size: 15px;
+}
+
+/* =========================
+   PAGE 9 - LETTER
+========================= */
+
+#page9 {
+    background:
+        radial-gradient(circle at 20% 10%, #f4d5c0, transparent 30%),
+        #fff7ee;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.letter-container {
+    width: min(750px, 94%);
+    background: #fffdf8;
+    padding: 45px clamp(25px, 7vw, 70px);
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(60,35,25,.12);
+    position: relative;
+}
+
+.letter-container::before {
+    content: "♥";
+    position: absolute;
+    top: 15px;
+    right: 22px;
+    color: #c46b6b;
+    font-size: 20px;
+}
+
+.letter-title {
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    color: #873c3c;
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+.letter {
+    font-family: 'Caveat', cursive;
+    font-size: 23px;
+    line-height: 1.7;
+    color: #543c37;
+}
+
+.letter p {
+    margin-bottom: 18px;
+}
+
+/* =========================
+   PAGE 10 - FINAL
+========================= */
+
+#page10 {
+    background:
+        radial-gradient(circle at center, #fff0dc, transparent 30%),
+        linear-gradient(135deg, #f2c5b2, #fff0dc, #d99479);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.final-content {
+    z-index: 5;
+    padding: 30px;
+}
+
+.final-ghost {
+    font-size: 75px;
+    animation: float 3s infinite;
+}
+
+.final-title {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(50px, 9vw, 100px);
+    color: #7c3434;
+    line-height: 1;
+}
+
+.final-anniversary {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(40px, 7vw, 75px);
+    color: #8e4242;
+    margin-top: 15px;
+}
+
+.final-sub {
+    margin-top: 25px;
+    font-family: 'Caveat', cursive;
+    font-size: 28px;
+}
+
+.confetti {
+    position: absolute;
+    top: -20px;
+    font-size: 25px;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(700deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 700px) {
+
+    .reason-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reason {
+        min-height: auto;
+        padding: 15px;
+    }
+
+    .envelope {
+        width: 240px;
+        height: 165px;
+    }
+
+    .letter-paper {
+        height: 125px;
+    }
+
+    .letter {
+        font-size: 21px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     PAGE 1
+========================= -->
+
+<section class="page active" id="page1">
+
+    <div class="envelope-area">
+
+        <div class="envelope" id="envelope" onclick="openEnvelope()">
+
+            <div class="envelope-back"></div>
+
+            <div class="letter-paper">
+                <span>Hi boo 👻</span>
+            </div>
+
+            <div class="envelope-flap"></div>
+
+            <div class="envelope-front"></div>
+
+            <div class="envelope-heart">❤️</div>
+
+        </div>
+
+        <div class="envelope-title">
+            Someone left you a little surprise...
+        </div>
+
+        <div class="open-hint">
+            click the envelope 💌
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 2
+========================= -->
+
+<section class="page" id="page2">
+
+    <div class="anniversary-content">
+
+        <div class="ghost">👻</div>
+
+        <div class="small-text">
+            a little message for you
+        </div>
+
+        <div class="boyfriend-day">
+            Happy Boyfriend's Dayyyy!
+        </div>
+
+        <div class="love-gif">
+            ❤️
+        </div>
+
+        <div style="font-family:'Caveat'; font-size:25px;">
+            I love youuuuu.
+        </div>
+
+        <br>
+
+        <button class="next-btn" onclick="nextPage()">
+            one more thing... →
+        </button>
+
+    </div>
+
+    <div id="hearts1"></div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 3
+========================= -->
+
+<section class="page" id="page3">
+
+    <div id="leaves1"></div>
+
+    <div class="autumn-content">
+
+        <div class="autumn-title">
+            October is our month,<br>
+            isn't it? 🍁
+        </div>
+
+        <p class="autumn-sub">
+            Somehow, this month became a little more special
+            simply because it became ours.
+        </p>
+
+        <button class="next-btn" onclick="nextPage()">
+            🍂 but why October?
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 4
+========================= -->
+
+<section class="page" id="page4">
+
+    <div id="leaves2"></div>
+
+    <div class="fall-content">
+
+        <div class="fall-title">
+            And again,<br>
+            we fall in love<br>
+            in October.
+        </div>
+
+        <div class="falling-heart">
+            ❤️
+        </div>
+
+        <div class="fall-sub">
+            And somehow, I'd choose you all over again.
+        </div>
+
+        <button class="next-btn" onclick="nextPage()">
+            keep going 🍂
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 5
+========================= -->
+
+<section class="page" id="page5">
+
+    <div class="award-content">
+
+        <div class="trophy">🏆</div>
+
+        <div class="award-heading">
+            The Official Boyfriend Awards
+        </div>
+
+        <div class="award-box">
+
+            <div style="font-size:14px; letter-spacing:2px;">
+                AND THE AWARD FOR
+            </div>
+
+            <div class="award-name">
+                BEST BOYFRIEND
+            </div>
+
+            <div style="font-size:18px;">
+                goes to...
+            </div>
+
+            <div style="font-size:50px; margin:10px;">
+                🥁
+            </div>
+
+            <div style="font-family:'Caveat'; font-size:40px;">
+                You. ❤️
+            </div>
+
+            <ul class="award-list">
+
+                <li>🏆 Best Person to Annoy Me</li>
+                <li>🏆 Best Human to Hug</li>
+                <li>🏆 Best "I'm Here" Person</li>
+                <li>🏆 Best Partner in Random Nonsense</li>
+                <li>🏆 Best Boyfriend</li>
+                <li>🏆 Best Place to Feel at Home</li>
+
+            </ul>
+
+            <div class="award-footer">
+                Awarded indefinitely.<br>
+                No expiry date. ❤️
+            </div>
+
+        </div>
+
+        <button class="next-btn" onclick="nextPage()">
+            continue →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 6
+========================= -->
+
+<section class="page" id="page6">
+
+    <div class="five-content">
+
+        <div class="small-text">
+            because it's five years...
+        </div>
+
+        <div class="five-title">
+            Five little things<br>
+            I hope you always know.
+        </div>
+
+        <div class="reason-grid">
+
+            <div class="reason">
+                <div class="reason-number">01</div>
+                <p>You are loved. More than you probably realize.</p>
+            </div>
+
+            <div class="reason">
+                <div class="reason-number">02</div>
+                <p>You make ordinary days feel a little better.</p>
+            </div>
+
+            <div class="reason">
+                <div class="reason-number">03</div>
+                <p>You are still my favourite human.</p>
+            </div>
+
+            <div class="reason">
+                <div class="reason-number">04</div>
+                <p>I hope we keep growing together.</p>
+            </div>
+
+            <div class="reason">
+                <div class="reason-number">05</div>
+                <p>If I had to choose again, I'd still choose you.</p>
+            </div>
+
+        </div>
+
+        <div style="font-family:'Caveat'; font-size:27px; margin-bottom:25px;">
+            And that's only five. I could keep going. ❤️
+        </div>
+
+        <button class="next-btn" onclick="nextPage()">
+            one tiny question →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 7
+========================= -->
+
+<section class="page" id="page7">
+
+    <div class="question-content">
+
+        <div class="question-title">
+            Quick question, boo...
+        </div>
+
+        <div class="question">
+            What are we? 👀
+        </div>
+
+        <div class="choice-container">
+
+            <button class="choice" onclick="answer()">
+                ☕ cozy
+            </button>
+
+            <button class="choice" onclick="answer()">
+                🍂 autumn
+            </button>
+
+            <button class="choice" onclick="answer()">
+                ❤️ hopelessly in love
+            </button>
+
+            <button class="choice" onclick="answer()">
+                🧸 two idiots
+            </button>
+
+        </div>
+
+        <div class="answer" id="answer"></div>
+
+        <button
+            class="next-btn"
+            id="questionNext"
+            onclick="nextPage()"
+            style="display:none;"
+        >
+            okay, one last thing... →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 8
+========================= -->
+
+<section class="page" id="page8">
+
+    <div class="question-content">
+
+        <div class="moon">🌙</div>
+
+        <div class="quiet-text">
+            Some things change.<br>
+            Seasons change.<br>
+            Years change.<br>
+            We change.
+        </div>
+
+        <div class="quiet-small">
+            but I hope one thing stays the same.
+        </div>
+
+        <div style="
+            font-family:'Caveat';
+            font-size:55px;
+            margin-top:25px;
+            color:#ffd29c;
+        ">
+            Us. ❤️
+        </div>
+
+        <br>
+
+        <button class="next-btn" onclick="nextPage()">
+            something I want you to read 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 9 - LETTER
+========================= -->
+
+<section class="page" id="page9">
+
+    <div class="letter-container">
+
+        <div class="letter-title">
+            A little letter for you ❤️
+        </div>
+
+        <div class="letter">
+
+            <p>Dear Utsav,</p>
+
+            <p>
+                If I could go back to the beginning of our story,
+                I think I'd still choose you — in every version of it.
+            </p>
+
+            <p>
+                Thank you for being there through the ordinary days,
+                the difficult ones, the silly ones, and all the little
+                moments in between. Thank you for being my person,
+                my comfort, and my favourite human.
+            </p>
+
+            <p>
+                Five years feels like such a big number, but somehow
+                I still feel like there is so much more left for us
+                to experience, laugh about, learn, and dream about together.
+            </p>
+
+            <p>
+                I hope we keep growing together. I hope we keep finding
+                reasons to laugh at the most random things, keep annoying
+                each other, keep making ordinary days feel special,
+                and keep choosing each other through every version of life.
+            </p>
+
+            <p>
+                If I had to choose again, I wouldn't hesitate.
+            </p>
+
+            <p>
+                It would still be you.
+            </p>
+
+            <p>
+                Happy 5th Anniversary, my favourite human. ❤️
+            </p>
+
+            <p>
+                And here's to all the little moments and big dreams
+                still waiting for us.
+            </p>
+
+            <p>
+                Always,<br>
+                Gauri ❤️
+            </p>
+
+        </div>
+
+        <div style="text-align:center; margin-top:30px;">
+
+            <button class="next-btn" onclick="nextPage()">
+                🎈 one last surprise
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 10
+========================= -->
+
+<section class="page" id="page10">
+
+    <div id="confetti"></div>
+
+    <div class="final-content">
+
+        <div class="final-ghost">
+            👻
+        </div>
+
+        <div class="final-title">
+            Happy Boyfriend's Day! 🎈
+        </div>
+
+        <div class="final-anniversary">
+            ❤️ Happy 5th Anniversary, Utsav ❤️
+        </div>
+
+        <div class="final-sub">
+            Here's to another October. 🍂
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
+
+let currentPage = 1;
+
+function nextPage() {
+
+    const oldPage = document.getElementById("page" + currentPage);
+
+    oldPage.classList.remove("active");
+
+    currentPage++;
+
+    const newPage = document.getElementById("page" + currentPage);
+
+    if (newPage) {
+        newPage.classList.add("active");
+        window.scrollTo(0, 0);
+    }
+
+    if (currentPage === 2) {
+        createHearts();
+    }
+
+    if (currentPage === 3) {
+        createLeaves("leaves1", 25);
+    }
+
+    if (currentPage === 4) {
+        createLeaves("leaves2", 25);
+    }
+
+    if (currentPage === 10) {
+        createConfetti();
+    }
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+function openEnvelope() {
+
+    const envelope = document.getElementById("envelope");
+
+    envelope.classList.add("open");
+
+    setTimeout(() => {
+
+        document.getElementById("page1")
+            .classList.remove("active");
+
+        currentPage = 2;
+
+        document.getElementById("page2")
+            .classList.add("active");
+
+        createHearts();
+
+    }, 1500);
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+function createHearts() {
+
+    const container = document.getElementById("hearts1");
+
+    if (!container || container.children.length > 0)
+        return;
+
+    const hearts = ["❤️", "♡", "♥", "💕"];
+
+    for (let i = 0; i < 35; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerText =
+            hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left =
+            Math.random() * 100 + "%";
+
+        heart.style.animationDuration =
+            (5 + Math.random() * 7) + "s";
+
+        heart.style.animationDelay =
+            Math.random() * 6 + "s";
+
+        heart.style.fontSize =
+            (12 + Math.random() * 18) + "px";
+
+        container.appendChild(heart);
+    }
+}
+
+
+/* =========================
+   AUTUMN LEAVES
+========================= */
+
+function createLeaves(containerId, amount) {
+
+    const container =
+        document.getElementById(containerId);
+
+    if (!container || container.children.length > 0)
+        return;
+
+    const leaves = ["🍁", "🍂", "🍁", "🍂"];
+
+    for (let i = 0; i < amount; i++) {
+
+        const leaf = document.createElement("div");
+
+        leaf.className = "leaf";
+
+        leaf.innerText =
+            leaves[Math.floor(Math.random() * leaves.length)];
+
+        leaf.style.left =
+            Math.random() * 100 + "%";
+
+        leaf.style.animationDuration =
+            (6 + Math.random() * 7) + "s";
+
+        leaf.style.animationDelay =
+            Math.random() * 8 + "s";
+
+        leaf.style.fontSize =
+            (20 + Math.random() * 25) + "px";
+
+        container.appendChild(leaf);
+    }
+}
+
+
+/* =========================
+   QUESTION
+========================= */
+
+function answer() {
+
+    const answerBox =
+        document.getElementById("answer");
+
+    answerBox.innerHTML =
+        "Correct answer. ❤️";
+
+    document.getElementById("questionNext")
+        .style.display = "inline-block";
+}
+
+
+/* =========================
+   FINAL CONFETTI
+========================= */
+
+function createConfetti() {
+
+    const container =
+        document.getElementById("confetti");
+
+    const pieces = [
+        "❤️", "💕", "🎈", "🍂",
+        "🍁", "✨", "♥", "🎉"
+    ];
+
+    for (let i = 0; i < 70; i++) {
+
+        const piece =
+            document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.innerText =
+            pieces[Math.floor(Math.random() * pieces.length)];
+
+        piece.style.left =
+            Math.random() * 100 + "%";
+
+        piece.style.animationDuration =
+            (3 + Math.random() * 5) + "s";
+
+        piece.style.animationDelay =
+            Math.random() * 3 + "s";
+
+        piece.style.fontSize =
+            (12 + Math.random() * 22) + "px";
+
+        container.appendChild(piece);
+    }
+}
+
+</script>
+
+</body>
+</html>
